@@ -2970,7 +2970,7 @@ std::vector<std::string> vs = { "hello", "szia", "C++"};
 ...
 ```
 
-Lásd: [vector\_template példa](LINK).
+Lásd: [vector\_template példa](peldak/vector_template).
 
 ## Template specializáció<a id='templatespec'></a>
 
@@ -2978,7 +2978,7 @@ Osztály sablonok és függvény sablonok esetén is meg lehet oldani, hogy egy-
 
 Példák:
 * Template metaprogramozásos példa (lejjebb).
-* [specialized\_array.cpp](LINK)
+* [specialized\_array.cpp](2021_osz/ora_12/specialized_array.cpp)
 
 Megjegyzés: osztály sablonokhoz ún. parciális template specializációt is lehet írni, mely esetben valamennyi sablonparamétert leszögezünk, a többit paraméternek hagyjuk...
 
@@ -3108,7 +3108,7 @@ for (typename std::set<int>::const_iterator it = mySet.cbegin(); it != mySet.cen
 }
 ```
 
-Megjegyzés: A `typename` kulcsszót nem mindig kötelező kiírni, de azért lehet rá szükség, hogy egyértelműsítsük, hogy egy belső típus nevét akarjuk meghivatkozni és nem egy statikus tagot (lásd: osztály belső típusainak és statikus tagoknak szintaxisa). [Példa](LINK)
+Megjegyzés: A `typename` kulcsszót nem mindig kötelező kiírni, de azért lehet rá szükség, hogy egyértelműsítsük, hogy egy belső típus nevét akarjuk meghivatkozni és nem egy statikus tagot (lásd: osztály belső típusainak és statikus tagoknak szintaxisa). [Példa](2021_osz/ora_13/typename.cpp)
 
 Fontos: Konstans objektumon csak `const_iterator`-ral tudunk végig iterálni, mert csak azok garantálják a read-only elem elérést, hogy ne sértsük az adatszerkezet konstansságát!
 
