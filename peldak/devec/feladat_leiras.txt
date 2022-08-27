@@ -1,0 +1,42 @@
+
+Egy olyan sablon osztalyt kell megvalositani, mely leallokal N elemnek tarhelyet,
+majd a memoriaban kozeprol kezdi el feltolteni. Mindket iranyba lehet elemeket
+hozzaadni a push_back() es push_front() metodusokkal.
+Ezek kellenek meg bele:
+ - ktor, masolo ktor, dtor
+ - size()
+ - elem elereshez: at() es operator[] prototipusok
+ - iteralashoz: iterator, const_iterator belso tipusok,
+                begin(), cbegin(), end, cend() tagfuggvenyek
+ - konverzios operator irasa, hogy tudjon implicit std::vector<T>-re konvertalodni
+
+Az adatszerkezet hasznalatahoz lasd: devmain.cpp
+
+Azt lehet feltetelezni, hogy a kod hasznaloja nem probal meg N/2-nel tobb elemet
+beszurni egyik iranyba sem.
+
+Vizualizacio: T=int, N=10
+
+push_back(8);
+push_back(2);
+push_back(4);
+push_front(0);
+push_back(5);
+push_front(2);
+
+|.|.|.|.|.|.|.|.|.|.|
+
+|.|.|.|.|8|.|.|.|.|.|
+
+|.|.|.|.|8|2|.|.|.|.|
+
+|.|.|.|.|8|2|4|.|.|.|
+
+|.|.|.|0|8|2|4|.|.|.|
+
+|.|.|.|0|8|2|4|5|.|.|
+
+|.|.|2|0|8|2|4|5|.|.|
+
+(A pontokkal jelolt tarteruleteken tetszoleges - inicializalatlan - ertekek lehetnek)
+

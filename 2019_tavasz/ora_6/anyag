@@ -1,0 +1,11 @@
+
+Tematika:
+	osztályok (part 2)
+		access modifier (public/private)
+			class vs struct kulcsszó (default access modifier)
+		adattagok és tagfüggvények (lehetnek const-ok, szignatúra! + túlterhelés)
+		konstruktor (különböző szintaxisok, default konstruktor, inicializáló lista)
+		destruktor (pl. dinamikus memória kezelésnél, fájl deszkriptor bezárása, loggolás)
+		static member (osztály szintű adattag/metódus, élettartam, használat)
+		+ példák
+

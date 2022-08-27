@@ -1,0 +1,16 @@
+Tematika:
+
+	Mutatók (folyt)
+		int* x / int * x / int *x (veszélyes: int* x, y)
+		T ** (pointer pointer-re mutat)
+		0/NULL/nullptr
+		void*
+		function pointer
+	Dinamikus memória (new, delete, delete[])
+		dinamikus tömbök
+		veszélyei
+	referencia
+		const referencia
+		összehasonlítás mutatókkal
+	+ gyakorló példák
+

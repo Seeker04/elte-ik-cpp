@@ -1,0 +1,40 @@
+
+Tematika:
+	Gépi szó és padding
+	Típus konverziók
+		ismétlés: C-s cast (C-like és functional szintaxis)
+		static_cast
+		dynamic_cast
+		reinterpret_cast
+		const_cast
+		+ használati esetek és veszélyeik
+	Implicit konverzió definiálása az operator() használatával
+	Polimorfizmusok összefoglalása (parametrikus, ad-hoc, altípusos és kasztolás)
+	Kivétel kezelés
+		throw, try, catch kulcsszavak és szemantikájuk
+
+	Névtelen névtér
+
+-------------------------------------------------------------------------------
+
+	STL
+		iterátorok
+			típusaik (output, input, forward, bi-directional, random access)
+			használatuk, jelentőségük
+			reverse iterátor (rbegin, rend)
+			const iterátor (cbegin, cend)
+		fontosabb adatszerkezetek: használatuk, hatékonyságuk
+			vector, list, set, multiset, map, multimap, stack, queue
+			bináris fa áttekintés (reprezentáció memóriában)
+		fontosabb algoritmusok: használatuk, hatékonyságuk
+			sort, find, find_if
+
+-------------------------------------------------------------------------------
+
+	C++11
+		auto kulcsszó + for ciklusos használat
+		smart pointer-ek
+		stb...
+
+	Gyakorlás zh-ra
+

@@ -1,0 +1,11 @@
+Tematika:
+
+	lvalue, rvalue
+	konstansok (const kulcsszó)
+		konstansság nem veszíthető el
+	mutatók (konstansságuk)
+	tömbök (statikus)
+		típusilag homogén: Elemei azonos típusúak
+		méretének ismertnek kell lennie fordítási időben (statikus tömb)
+	pointer aritmetika
+

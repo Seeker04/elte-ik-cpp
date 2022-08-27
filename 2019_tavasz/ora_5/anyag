@@ -1,0 +1,24 @@
+
+Tematika:
+	pluszmínusz átbeszélése
+		int const * p vs int * const p
+		kiindexelés futási idejű hiba: int i; std::cin >> i; std::cout << t[i]; <- ez csak futási időben dől el
+	gyakorlás
+		swap függvény megírása (több lehetséges megoldás)
+		void f(int x, int y = x) {...} problémája (miért nem lehet?)
+	típusok
+		literálok
+		típus konverziók
+		standard méret előírásai (pl. sizeof(char) == 1)
+	vezérlési szerkezetek (kulcsszavak) -- csak röviden
+		if / else if / else / switch
+		while / do while / for
+		break / continue / goto
+	typedef kulcsszó (összehasonlítás a makrókkal) + using (C++11 óra)
+	enumerációk
+		pl. enum Color { RED, GREEN = 120, BLUE };
+	osztályok (part 1)
+		C-s struct vs C++-os
+		deklarálása és definíciója
+		reprezentáció a memóriában
+

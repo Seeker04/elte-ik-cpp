@@ -1,0 +1,14 @@
+
+Tematika:
+	osztályok (part 3)
+		default konstruktor hívása (szintaxis)
+		explicit kulcsszó konstruktorhoz
+		this pointer (const tagfüggvénynél típusa)
+		vektoros példa
+			típus definíció osztályon belül
+			kivétel kezelés (try, catch)
+			copy konstruktor
+			értékadás operátor
+			szögletes zárójel operátor (túlterhelés const változattal)
+			dinamikus memória kezelés (destruktor fontossága)
+

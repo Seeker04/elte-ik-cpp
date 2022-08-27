@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>30</y>
+      <w>320</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>/IContainer/
+--
+/+ addElem(int) : void {pure virtual}/
+/+ getElem(int) : int  {pure virtual}/
+/+ getSize() : int     {pure virtual}/
+/+ clear() : void      {pure virtual}/
+
++ ~IContainer() {virtual}
+
+bg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>210</y>
+      <w>320</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>VectorContainer
+--
++ addElem(int) : void {override}
++ getElem(int) : int  {override}
++ getSize() : int     {override}
++ clear() : void      {override}
+...
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>210</y>
+      <w>320</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>LinkedListContainer
+--
++ addElem(int) : void {override}
++ getElem(int) : int  {override}
++ getSize() : int     {override}
++ clear() : void      {override}
+...
+
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>300</x>
+      <y>150</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>150</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>600</x>
+      <y>50</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Interface
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>60</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>310</x>
+      <y>380</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Implementations
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>320</y>
+      <w>60</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>320</y>
+      <w>60</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+</diagram>

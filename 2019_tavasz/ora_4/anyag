@@ -1,0 +1,22 @@
+Tematika:
+
+	függvények
+		függvény szignatúra (deklarálás vs definíció)
+		függvény paraméter átadás
+			érték szerint (default)
+			pointer-rel (lehet const)
+			referencia szerint (lehet const)
+			default paraméterek (=> függvény prototípusok)
+		ismétlés: hívási verem (paraméterek és lokális változók élettartama és láthatósága + static lok. vált.)
+		overloading (szignatúra!)
+		inline
+		f(int), f(char *), f(NULL) problémája => nullptr jobb mint a NULL
+	operátorok
+		speciális szintaxisú függvények (pl. prefix, infix, postfix)
+		unáris (++, --, *, &), bináris (+, -, *, /, *=), ternáris (? :) (megj. * szemantikája környezetfüggő)
+		overload-olhatók!
+	undefined behavior / unspecified behavior / implementation defined behavior
+		undefined (pl null pointer dereferálása, tömbből kiindexelés, stb...)
+		unspecified (pl i=0; std::cout << i++ << i++; f(g(), h()))
+		implementation defined (pl. sizeof(int))
+

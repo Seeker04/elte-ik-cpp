@@ -1,0 +1,25 @@
+        fordito     linker
+main.cpp ---> main.o \
+a.cpp    ---> a.o     |---> a.out
+b.cpp    ---> b.o    /
+---------------------------------------
+forras-    targykodok    futtathato
+fajlok     (objects)      binaris
+(sources)                (executable)
+
+=======================================
+
+Csak forditas, osszeszerkesztes nelkul:
+g++ -c a.cpp        # -> a.o
+g++ -c main.cpp     # -> main.o
+
+Linkeles:
+g++ main.o a.o      # -> a.out
+
+
+Lehet mindkettot egy paranccsal, szimplan:
+g++ main.cpp a.cpp  # -> a.out
+(Ugyanaz a folyamat fut vegig: forditasok es a vegen osszeszerkesztes)
+
+lasd: man g++, man ld
+

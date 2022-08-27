@@ -1,0 +1,11 @@
+Tematika:
+
+	Deklaráció vs definíció
+	One Definition Rule
+	Fordítás (fordítás command line-ból, flag-ek, fordítási egység, tárgykód, linkelés, futtatható bináris)
+	Névterek (+ using)
+	static, extern globális változók/függvények
+	hívási verem (call stack)
+	változó élettartam (lifetime) vs láthatóság (scope)
+	függvény static lokális változója
+

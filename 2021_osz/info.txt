@@ -1,0 +1,132 @@
+----------------------------------------
+Alap adatok
+----------------------------------------
+
+Programozási nyelvek (C++) GY
+Csoport: 8
+
+Oktató: Zahorán Barnabás
+E-mail: zahoranb [at] protonmail [dot] com
+Időpont: Péntek 8:15 - 9:45
+Helyszín: LD-5-202 / MS Teams + Canvas
+
+Számonkérés: Félév végén beadandó írása (~1 hét), majd szóbeli vizsga Teams-en:
+elmélet, beadandó védés, esetleg minimális kód módosítás, ha kéri az oktató
+
+----------------------------------------
+Segédanyagok
+----------------------------------------
+
+Gyakorlati segédanyagok: https://barni.web.elte.hu/c++/
+(Főleg: fogalomtar.txt, fogalomtar_kidolgozott.txt)
+
+Előadás diák/példakódok: https://patakino.web.elte.hu/pny1/
+
+Egyéb hasznos források készüléshez:
+ - https://github.com/Szelethus/ELTE-IK-CPP (különösképp: cpp_book.pdf)
+ - https://www.cplusplus.com/doc/tutorial/ (tömör, lényegretörő leírás)
+ - https://www.cprogramming.com/tutorial/c++-tutorial.html (itt is sok hasznos/érdekes cikk van)
+
+Standard library dokumentáció:
+  https://www.cplusplus.com/reference/
+  (Főképp: Containers rész, miscellaneous/algorithm,string,...)
+
+----------------------------------------
+Beadandó
+----------------------------------------
+
+Fordítás: Ubuntu 20.04 LTS, 9.3.0 gcc + megadott flag-ek
+  - g++ -fsanitize=address,leak,undefined -O3 -Wall -Wextra -Werror main.cpp
+      Ha error/warning nélkül lefordul és futásnál sem panaszkodik a sanitizer,
+      akkor OK
+  - clang-tidy-11 --header-filter=.* main.cpp --
+      Ha nem ír hibát, akkor OK
+  - valgrind --leak-check=full --show-leak-kinds=all ./a.out
+      Ha ilyet ír, és más hibát sem ír, akkor OK:
+      total heap usage: N allocs, N frees
+      All heap blocks were freed -- no leaks are possible
+    Megj.: a valgrind nem szereti a sanitizer-t, ezért
+    valgrind-os futtatás előtt -fsanitize nélkül fordítsátok!
+
+A toolchain-hez:
+
+Ubuntu iso: https://ubuntu.com/download/desktop
+VirtualBox: https://www.virtualbox.org/wiki/Downloads
+VirtualBox > New > Linux/Ubuntu (64-bit) > 4096MB memory, 10GB VDI disk elég
+Settings > Storage > Controller: IDE > Empty > Optical Drive > Choose a disk file... >
+.iso kitallózása > Start > Ubuntu install (Minimal installation elég)
+
+Vagy még egyszerűbb:
+WSL - Windows Subsystem for Linux - MS store-ból fel lehet tenni:
+https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab
+
+apt-get update
+apt-get install g++ clang-tidy-11 valgrind
+
+A beadandókat standard C++-ban (c++98) kell megírni:
+ - A kód ne tartalmazzon standardon kívül eső compiler extension-öket (pl. pragma once)
+   Ezt a -pedantic fordítási kapcsolóval lehet ellenőriztetni
+ - Az előadáson/gyakorlatokon bemutatott nyelvi konstrukciókat használjuk,
+   modern C++ feature-ök használata (pl. ranged-based for loop, smart pointer, lambdák)
+   nem tiltott, de ha használjátok, őket is meg kell tudni magyarázni, illetve
+   az oktató kérheti, hogy írjátok át a megoldásotokat a vele ekvivalens régi (c++98)
+   konstrukciókra
+   Példa:
+     std::map<int, std::string> m;
+     ...
+     auto it = m.cbegin();  // ha ezt írjátok, tudni kell, hogy ezzel ekvivalens:
+     std::map<int, std::string>::const_iterator it = m.cbegin();
+     // Mivel úgyis bele fog kérdezni a vizsgáztató és át kell tudni írni a
+     // vizsgán, ezért én azt javaslom, eleve a második verziót írjátok a beadandóba
+ - Megjegyzés: -std=c++98 fordítási kapcsolóval tudjátok ellenőrizni, hogy a
+   98-as szabványnak megfelel-e a kódotok.
+
+----------------------------------------
+FAQ
+----------------------------------------
+
+- Linux-on kell megírnom a programot? Vim-et kell használni?
+- Nem feltétlen. A program lefejleszthető tetszőleges platformon tetszőleges editorral/IDE-vel.
+  Ami kell: miután elkészült a program, beküldés előtt le kell ellenőrizni, hogy
+  a fent specifikált Linux-os környezetben lefordul a megadott paraméterekkel,
+  illetve átmegy hiba nélkül a megadott eszközök ellenőrzésein.
+
+- Lehet a pandora vagy a caesar szervereket is használni fordításra?
+- Nem. Sajnos ezek a szerverek nem megfelelő környezetek: nagyon régi rajtuk a
+  g++ verziója, nincs rajtuk clang-tidy telepítve, pandorán még valgrind sincs,...
+
+- Hogyan tudom átmásolni VirtualBox-ba a Windows-os gazdagépről a forrásfájlokat (vagy fordítva)?
+- VirtualBox VM > Settings > Shared Folders > Add Shared Folder
+   * Folder Path: Windows-os útvonal a kívánt könyvtárba (ahol a források vannak)
+   * Folder Name: pl. "vm_share"
+   * Auto-mount: pipa
+   * Mount point: Linux oldali útvonal, ahová csatolni fogja, pl. /mnt/vm_share/
+  VM reboot
+  Ezt követően szabadon elérhető a Windows-os könyvtár az /mnt/vm_share/ útvonalon.
+  Ez még kellhet, ha nincs fent a vbox guest additions: VM-ben:
+  sudo mkdir /mnt/vm_share
+  sudo mount -t vboxsf vm_share /mnt/vm_share
+
+- Hogyan tudom átmásolni WSL-be a Windows-os fájlrendszerről a forrásfájlokat?
+- A WSL mindig auto mount-olja a Windows-os C: meghajtót az /mnt/c/ útvonalra,
+  azon keresztül el lehet érni a fájlokat.
+
+- A clang-tidy-11-et futtatva "compilation database" hibát kapok!
+- "compilation database" hiánya miatt írt hiba nem probléma. Ha más hibát nem ír, akkor ok.
+  Ha utolsó paraméternek írtok egy "--"-t, akkor nem fogja írni ezt a hibát.
+
+- "error reading main.cpp", "main.cpp: Permission denied" vagy ehhez hasonló hibákat dobnak az eszközök!
+- Meg kell nézni, hogy van-e olvasási jog a forrásfájlokon:
+  ls -l main.cpp myheader.h
+  Ha nincs, adjatok nekik és jó lesz:
+  sudo chmod +r main.cpp myheader.h
+
+- Szét lehet szedni több fájlra a megoldásomat? (Pl. külön egy header + egy .cpp)
+- Nem. Egyetlen header fájlba kell megírni az osztályt és csak azt az 1 header-t
+  kell majd visszaküldeni (Teams üzenetben csatolmányként és nem a kódot szövegként copy-paste elve).
+
+- Szabad módosítani a megkapott main.cpp-n?
+- Nem. Mi úgyis az eredeti main.cpp-vel fogjuk leellenőrizni, azzal kell lefordulnia
+  és helyesen működnie.
+  Ha magával a main.cpp-vel van valami gond, akkor azt üzenetben jelezzétek!
+

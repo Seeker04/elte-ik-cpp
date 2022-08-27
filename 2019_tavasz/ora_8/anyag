@@ -1,0 +1,19 @@
+
+Tematika:
+	Osztályok (part 4)
+		Vektoros példa (folyt)
+			Memória reprezentáció átnézése példán
+			Hatékonyság (összehasonlítás láncolt listával)
+		friend kulcsszó (barát függvények, barát osztályok) + példa operator<< túlterheléssel
+	OOP
+		objektum orientáltság áttekintése (elvek: absztakció, enkapszuláció, modularitás, hierarchia)
+		öröklődés (+ láthatósága)
+		protected láthatóság
+		konstruktor és destruktor működése öröklődés esetén
+		virtuális metódus
+		tisztán virtuális metódus
+		absztrakt osztály (virtuális destruktor szerepe)
+		interfész fogalma
+		többszörös öröklődés (pl gyémánt öröklődés) problémája
+		altípusos polimorfizmus
+
