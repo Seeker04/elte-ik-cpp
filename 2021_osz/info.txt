@@ -17,7 +17,7 @@ elmélet, beadandó védés, esetleg minimális kód módosítás, ha kéri az o
 Segédanyagok
 ----------------------------------------
 
-Gyakorlati segédanyagok: https://barni.web.elte.hu/c++/
+Gyakorlati segédanyagok: https://github.com/Seeker04/elte-ik-cpp
 (Főleg: fogalomtar.txt, fogalomtar_kidolgozott.txt)
 
 Előadás diák/példakódok: https://patakino.web.elte.hu/pny1/

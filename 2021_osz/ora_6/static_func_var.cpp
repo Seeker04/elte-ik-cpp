@@ -20,5 +20,5 @@ int main(int argc, char *const argv[])
 }
 
 // Ebben van egy fel fokkal eletszerubb pelda is erre:
-// https://barni.web.elte.hu/c++/2020_osz/ora_4/static.cpp
+// https://github.com/Seeker04/elte-ik-cpp/blob/master/2020_osz/ora_4/static.cpp
 
