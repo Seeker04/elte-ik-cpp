@@ -306,3 +306,6 @@ zahoranb [at] protonmail [dot] com
 * [kivétel dobás, throw kulcsszó](fogalomtar_kidolgozott.md#throw)
 * [kivétel elkapás, try blokk, catch ágak](fogalomtar_kidolgozott.md#catch)
 
+# Egyéb
+* [Zero cost abstraction](fogalomtar_kidolgozott.md#zcostabstraction)
+

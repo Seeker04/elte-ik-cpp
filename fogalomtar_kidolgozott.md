@@ -3241,3 +3241,16 @@ Megjegyzés: Saját kivétel típusainkat érdemes lehet öröklődési hierarch
 
 Megjegyzés: C++-ban nincsen finally blokk! (Ez egy design decision volt: inkább a RAII elvre hagyatkozzunk, azaz a `try` blokkban élő objektumok pucolják ki maguk után az őáltaluk használt erőforrásokat automatikusan megsemmisüléskor - lefut a destruktoruk akkor is ha exception miatt terminál a függvény - minthogy arra hagyatkozzunk, hogy a programozó odatesz egy megfelelő finally blokkot megfelelő tartalommal...)
 
+# Egyéb
+
+## Zero cost abstraction<a id='zcostabstraction'></a>
+
+A C++ egyik design alapelve, hogy a hatékonyságot megőrizze, így igyekszik a legtöbb feature-t ún. zéró költségű absztrakciókkal megoldani.
+
+* **Absztrakció:** komplexitás elrejtése.
+* **Zero cost:** Nincs futási idejű overhead (fordítási idejű megengedett).
+
+Tipikus példái ennek a sablonok. A fordítási komplexitást jelentősen megnövelik, futási időben viszont már nem történik semmiféle "template lookup" vagy hasonló. A generált kód ugyanolyan hatékony, mintha kézi másolás-beillesztéssel duplikáltuk volna le kódunkat különböző típusokra.
+
+Ellenpéldául szolgál az altípusos polimorfizmus, hiszen ott a futási időben eldőlő dinamikus típusok szerint kell különböző virtuális táblákban (vtable) tárolt függvény címekre átkötni a virtuális mutatókat (vptr), illetve a velük kapcsolatos ellenőrzéseket megtenni (lásd: dynamic_cast). Emiatt kevésbé hatékony a nyelv a C-nél? Nem, mert ha ugyanilyen szemantikát szeretnénk elérni, akkor C-ben is szükségünk lenne erre az overhead-re annyi különbséggel, hogy nekünk kéne kézzel megírni ezt a virtuális táblás mechanizmust. Megoldás? Ha nagyon hatékonyság kritikus kódot szükséges írnunk, akkor kerüljük a virtuális függvények és altípusos polimorfizmus használatát.
+
