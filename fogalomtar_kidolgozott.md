@@ -492,7 +492,7 @@ char  // az ASCII kódtáblának el kell férnie rajta, C++-ban fixen 1 bájt
 ## Egész típusok<a id='egesztipusok'></a>
 
 ```C++
-short  // C-ben nincs
+short
 int
 long
 long long
